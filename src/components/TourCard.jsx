@@ -8,10 +8,12 @@ export default function TourCard({ tour }) {
           alt={tour.nombre} 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute top-4 left-0 bg-[--color-naranja-aventura] text-white px-4 py-1 rounded-r-lg font-bold shadow-md">
-          <span className="text-[10px] block uppercase leading-none">Desde</span>
-          S/ {tour.precio}
-        </div>
+        {/* Badge de Precio Ajustado */}
+{/* Badge de Precio con color forzado */}
+<div className="absolute top-4 left-0 bg-[#F07A24] text-white px-4 py-2 rounded-r-lg font-bold shadow-lg z-10">
+  <span className="text-[10px] block uppercase opacity-90 leading-none">Desde</span>
+  <span className="text-xl">S/ {tour.precio}</span>
+</div>
         <button className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-red-500 hover:bg-white transition-colors">
           ❤
         </button>
