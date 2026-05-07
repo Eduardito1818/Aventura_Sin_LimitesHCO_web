@@ -1,3 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-azul-aventura: #0E4D92;
+  --color-azul-profundo: #08366A;
+  --color-naranja-aventura: #F07A24;
+  --color-camello-safari: #D89A3D;
+  --color-verde-laguna: #3BB7A5;
+  --color-gris-carbon: #222831;
+  
+  --font-poppins: "Poppins", sans-serif;
+}
