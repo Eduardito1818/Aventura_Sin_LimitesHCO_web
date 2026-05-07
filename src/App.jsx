@@ -6,33 +6,33 @@ import TourCard from "./components/TourCard";
 const TOURS_DATA = [
   {
     id: 1,
-    nombre: "Cultura Millenaria",
-    precio: 49,
-    duracion: "3 días",
+    nombre: "Huánuco Tradicional",
+    precio: 50, //
+    duracion: "Full Day",
     dificultad: "Fácil",
     rating: 4.8,
-    reviews: 120,
-    imagen: "https://images.unsplash.com/photo-1587547131116-a0655a526190?q=80&w=1000&auto=format&fit=crop"
+    reviews: 45,
+    imagen: "/src/assets/huanuco-tradicional.jpg.png" // Cambia por tu ruta real
   },
   {
     id: 2,
-    nombre: "Tingo María",
-    precio: 89,
+    nombre: "Tingo María Exótico",
+    precio: 95, //
     duracion: "Full Day",
     dificultad: "Media",
     rating: 4.9,
-    reviews: 85,
-    imagen: "https://images.unsplash.com/photo-1596435680190-67f78119859f?q=80&w=1000&auto=format&fit=crop"
+    reviews: 62,
+    imagen: "/src/assets/tingo-maria.jpg.png" // Cambia por tu ruta real
   },
   {
     id: 3,
-    nombre: "Huallaga",
-    precio: 55,
-    duracion: "2 días",
-    dificultad: "Fácil",
+    nombre: "Andizónico",
+    precio: 65, //
+    duracion: "Full Day",
+    dificultad: "Media",
     rating: 4.7,
-    reviews: 64,
-    imagen: "https://images.unsplash.com/photo-1528164344705-4754268799af?q=80&w=1000&auto=format&fit=crop"
+    reviews: 38,
+    imagen: "/src/assets/andizonico.jpg.png" // Cambia por tu ruta real
   }
 ];
 
