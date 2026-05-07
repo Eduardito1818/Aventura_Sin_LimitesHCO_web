@@ -4,7 +4,7 @@ export default function Hero() {
       {/* Imagen de fondo con overlay oscuro para que se lea el texto */}
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: "url('/src/assets/hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('/src/assets/Portada.jpeg')" }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
       </div>

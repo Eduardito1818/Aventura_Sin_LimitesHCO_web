@@ -1,3 +1,6 @@
+
+import imagenEquipo from "../assets/equipo-aventura.jpg.jpeg"; 
+
 export default function About() {
   return (
     <section id="nosotros" className="py-20 bg-white">
@@ -16,7 +19,7 @@ export default function About() {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#D89A3D] rounded-2xl"></div>
               <img 
-                src="/src/assets/equipo-aventura.jpg" 
+                src={imagenEquipo} // 2. Usamos la variable importada aquí
                 alt="Equipo Aventura Sin Límites" 
                 className="relative rounded-2xl shadow-2xl z-10 w-full object-cover h-[400px]"
               />
@@ -30,7 +33,7 @@ export default function About() {
                 Nuestra Misión
               </h3>
               <p className="text-[#222831] font-inter leading-relaxed">
-                Un granito de arena del guía en enriquecer otras vidas alegres huánuco y más misiones sonriendo en nuestros que es eventos personas, la reconocidos los auténticos Huánuco.
+                Nuestra misión es enriquecer la vida de nuestros viajeros a través de experiencias auténticas en Huánuco, compartiendo la riqueza cultural y natural de nuestra región con calidez y profesionalismo.
               </p>
             </div>
 
@@ -39,13 +42,13 @@ export default function About() {
                 Por qué elegirnos
               </h3>
               <p className="text-[#222831] font-inter leading-relaxed">
-                Es elegibles creemos los guías en huánuco guías existen nuestras optimistas a través de ejemplos desempeño en tantas piñas huaracas que entornos sirve un reactivo solar ante la comunidad de autentico Huánuco.
+                Contamos con guías locales apasionados y certificados que garantizan tu seguridad y diversión. Nos esforzamos por ofrecer itinerarios únicos que te permitan conectar de verdad con la comunidad y el entorno huanuqueño.
               </p>
             </div>
 
             {/* Sello de Certificación */}
             <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border-l-4 border-[#0E4D92]">
-              <div className="text-3xl text-[#0E4D92]">🛡️</div>
+              <div className="text-3xl">🛡️</div>
               <div>
                 <h4 className="font-bold text-[#0E4D92]">Certificado</h4>
                 <p className="text-xs text-gray-500 uppercase font-bold tracking-widest">Guías Oficiales de Turismo</p>
