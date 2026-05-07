@@ -2,7 +2,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import TourCard from "./components/TourCard";
-import About from "./components/About"; // Importamos el nuevo componente
+import About from "./components/About"; 
+import Testimonials from "./components/Testimonials";
 
 const TOURS_DATA = [
   {
@@ -71,6 +72,7 @@ function App() {
 
         {/* Nueva Sección: Nosotros */}
         <About />
+        <Testimonials />
 
       </main>
     </div>
