@@ -4,6 +4,7 @@ import Features from "./components/Features";
 import TourCard from "./components/TourCard";
 import About from "./components/About"; 
 import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
 
 const TOURS_DATA = [
   {
@@ -75,6 +76,7 @@ function App() {
         <Testimonials />
 
       </main>
+      <Footer />
     </div>
   );
 }
