@@ -74,7 +74,7 @@ export const PACKAGES_DATA = [
     rating: 4.9,
     reviews: 120,
     imagen: "/src/assets/huanuco-tradicional.jpg.png",
-    puntos: ["Kotosh", "Tingo María", "Shacta", "Tomayquichua", "Hotel"]
+    puntos: ["Kotosh", "Tingo María", "Shacta", "Tomayquichua", "+ All Meals", "Hotel"]
   },
   {
     id: "p2",
@@ -83,7 +83,7 @@ export const PACKAGES_DATA = [
     duracion: "4 Días / 3 Noches",
     rating: 4.7,
     reviews: 95,
-    imagen: "/src/assets/tingo-maria.jpg.png",
+    imagen: "/src/assets/selva-aventura.jpg.png",
     puntos: ["Catarata de la Leona", "Cueva de las Lechuzas", "Paseo en bote", "Full Day", "Hotel"]
   },
   {
@@ -93,7 +93,43 @@ export const PACKAGES_DATA = [
     duracion: "6 Días / 5 Noches",
     rating: 4.8,
     reviews: 150,
-    imagen: "/src/assets/tingo-maria.jpg.png",
-    puntos: ["Laguna de Carpa", "Bosque de Rocas", "Comunidades Nativas", "Trekking", "Hotel"]
+    imagen: "/src/assets/sierra-magica.jpg.png",
+    puntos: ["Laguna de Carpa", "Bosque de Rocas", "Comunidades Nativas", "Trekking", "+ All Meals", "Hotel"]
+  }
+];
+
+export const CATEGORIES_DATA = [
+  {
+    id: "cat-basico",
+    categoria: "basico",
+    nombre: "Paquete Básico",
+    descripcion: "La mejor opción para escapadas rápidas y económicas.",
+    precio: "150.00",
+    duracion: "Full Days / Tours Cortos",
+    imagen: "/src/assets/huanuco-tradicional.jpg.png",
+    puntos: ["Movilidad Compartida", "Guía Local Certificado", "Entradas a Atractivos", "Fotos del Recuerdo"],
+    ruta: "/paquetes/basico"
+  },
+  {
+    id: "cat-recomendado",
+    categoria: "recomendado",
+    nombre: "Paquete Recomendado",
+    descripcion: "Nuestra opción más vendida y completa.",
+    precio: "515.00",
+    duracion: "3 a 5 Días de Aventura",
+    imagen: "/src/assets/selva-aventura.jpg.png",
+    puntos: ["Hoteles Seleccionados", "Almuerzos Típicos Incluidos", "Full Days Completos", "Soporte 24/7"],
+    ruta: "/paquetes/recomendado"
+  },
+  {
+    id: "cat-todo-incluido",
+    categoria: "todo-incluido",
+    nombre: "Paquete Todo Incluido",
+    descripcion: "La experiencia VIP de lujo sin preocupaciones.",
+    precio: "890.00",
+    duracion: "Experiencias de Alta Gama",
+    imagen: "/src/assets/sierra-magica.jpg.png",
+    puntos: ["Tours Privados Exclusivos", "Hoteles de 4 Estrellas", "Todas las Comidas", "Guía VIP"],
+    ruta: "/paquetes/todo-incluido"
   }
 ];

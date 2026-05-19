@@ -7,6 +7,8 @@ import TourCard from '../components/TourCard';
 import PackageCard from '../components/PackageCard';
 import { PACKAGES_DATA } from '../data/toursData';
 import { Link } from 'react-router-dom';
+import CategoryCard from '../components/CategoryCard';
+import { CATEGORIES_DATA } from '../data/toursData';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 
@@ -98,6 +100,21 @@ export default function Home() {
   </Link>
 </div>
           
+        </section>
+
+        {/* SECCIÓN DE CATEGORÍAS DE PAQUETES */}
+        <section id="categorias-paquetes" className="py-20 bg-slate-50 border-t border-b border-slate-100">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-poppins font-bold text-azul-aventura uppercase">Elige tu Estilo de Viaje</h2>
+              <div className="w-20 h-1.5 bg-naranja-aventura mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {CATEGORIES_DATA.map(cat => (
+                <CategoryCard key={cat.id} pkg={cat} />
+              ))}
+            </div>
+          </div>
         </section>
 
         <About />
