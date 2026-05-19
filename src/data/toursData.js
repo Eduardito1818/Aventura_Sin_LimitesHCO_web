@@ -64,3 +64,36 @@ export const TOURS_FULL_INFO = {
     noIncluye: ["Alimentación", "Gastos personales"]
   }
 };
+
+export const PACKAGES_DATA = [
+  {
+    id: "p1",
+    nombre: "Huánuco Completo: Aventura y Tradición",
+    precio: "605.00",
+    duracion: "5 Días / 4 Noches",
+    rating: 4.9,
+    reviews: 120,
+    imagen: "/src/assets/huanuco-tradicional.jpg.png",
+    puntos: ["Kotosh", "Tingo María", "Shacta", "Tomayquichua", "Hotel"]
+  },
+  {
+    id: "p2",
+    nombre: "Selva y Aventura",
+    precio: "515.00",
+    duracion: "4 Días / 3 Noches",
+    rating: 4.7,
+    reviews: 95,
+    imagen: "/src/assets/tingo-maria.jpg.png",
+    puntos: ["Catarata de la Leona", "Cueva de las Lechuzas", "Paseo en bote", "Full Day", "Hotel"]
+  },
+  {
+    id: "p3",
+    nombre: "Sierra Mágica",
+    precio: "780.00",
+    duracion: "6 Días / 5 Noches",
+    rating: 4.8,
+    reviews: 150,
+    imagen: "/src/assets/tingo-maria.jpg.png",
+    puntos: ["Laguna de Carpa", "Bosque de Rocas", "Comunidades Nativas", "Trekking", "Hotel"]
+  }
+];

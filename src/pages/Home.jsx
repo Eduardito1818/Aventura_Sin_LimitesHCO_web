@@ -4,6 +4,9 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import About from '../components/About';
 import TourCard from '../components/TourCard';
+import PackageCard from '../components/PackageCard';
+import { PACKAGES_DATA } from '../data/toursData';
+import { Link } from 'react-router-dom';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 
@@ -69,6 +72,32 @@ export default function Home() {
               Ver todos los tours →
             </button>
           </div>
+        </section>
+
+        {/* SECCIÓN DE PAQUETES EXCLUSIVOS */}
+        <section id="paquetes" className="py-20 container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-poppins font-bold text-azul-aventura uppercase">
+              PAQUETES EXCLUSIVOS
+            </h2>
+            <div className="w-20 h-1.5 bg-naranja-aventura mx-auto mt-3 rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PACKAGES_DATA.map(pkg => (
+              <PackageCard key={pkg.id} pkg={pkg} />
+            ))}
+          </div>
+          {/* === NUEVO BOTÓN: VER TODOS LOS PAQUETES === */}
+<div className="mt-16 flex justify-center">
+  <Link
+    to="/paquetes" // O la ruta donde vayas a listar todos tus paquetes
+    className="inline-flex items-center justify-center border-2 border-[#004a8c] text-[#004a8c] font-black text-sm uppercase tracking-widest px-10 py-4 rounded-full bg-white hover:bg-[#004a8c] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+  >
+    Ver todos los paquetes <span className="ml-2 font-sans">→</span>
+  </Link>
+</div>
+          
         </section>
 
         <About />
