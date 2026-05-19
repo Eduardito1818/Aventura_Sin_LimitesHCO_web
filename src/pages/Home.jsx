@@ -78,7 +78,7 @@ export default function Home() {
         <section id="paquetes" className="py-20 container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-poppins font-bold text-azul-aventura uppercase">
-              PAQUETES EXCLUSIVOS
+              PAQUETES DESTACADOS
             </h2>
             <div className="w-20 h-1.5 bg-naranja-aventura mx-auto mt-3 rounded-full"></div>
           </div>
