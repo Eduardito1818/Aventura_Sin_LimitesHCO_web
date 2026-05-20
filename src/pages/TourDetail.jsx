@@ -21,7 +21,7 @@ export default function TourDetail() {
     e.preventDefault(); // Evita que la página se recargue
     
     // Tu número de la agencia Aventura Sin Límites (reemplaza por el tuyo real)
-    const numeroAgencia = "51xxxxxxxxx"; 
+    const numeroAgencia = "51xxxxxxxxx"; ///poner numero
     
     // Redactamos el mensaje automático estructurado profesionalmente
     const mensaje = `¡Hola Aventura Sin Límites! 👋%0A%0AMe interesa realizar una reserva:%0A📌 *Tour:* ${tour.nombre}%0A👤 *Nombre:* ${nombreCliente}%0A📅 *Fecha:* ${fechaViaje}%0A👥 *Personas:* ${cantidadPersonas} viajeros.%0A%0A¿Me confirman disponibilidad y métodos de pago? 😊`;
