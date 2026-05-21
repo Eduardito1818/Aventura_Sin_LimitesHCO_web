@@ -2,7 +2,7 @@
 import Navbar from '../components/Navbar'; 
 import Hero from '../components/Hero';
 import Features from '../components/Features';
-import About from '../components/About';
+
 import TourCard from '../components/TourCard';
 import PackageCard from '../components/PackageCard';
 import { PACKAGES_DATA } from '../data/toursData';
@@ -117,7 +117,7 @@ export default function Home() {
           </div>
         </section>
 
-        <About />
+        
         <Testimonials />
 
       </main>

@@ -16,7 +16,7 @@ export default function Navbar() {
         <Link to="/" className="hover:text-orange-500 transition-colors">Inicio</Link>
         <Link to="/nosotros" className="hover:text-orange-500 transition-colors">Nosotros</Link>
         <Link to="/resenas" className="hover:text-orange-500 transition-colors">Reseñas</Link>
-        <a href="#tours" className="hover:text-orange-500 transition-colors">Tours</a>
+        <Link to="/#tours" className="hover:text-orange-500 transition-colors">Tours</Link>
       </div>
 
       {/* Right Section: Book Now Button and Language Selector */}
