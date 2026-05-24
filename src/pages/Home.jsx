@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 font-inter">
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-0 m-0 block">
         <Hero />
         <Features />
         

@@ -10,3 +10,20 @@
   
   --font-poppins: "Poppins", sans-serif;
 }
+
+/* 🚀 RESETEO PARA TAILWIND v4: Elimina la  franja blanca de raíz */
+@layer base {
+  *, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: hidden;
+  }
+}
