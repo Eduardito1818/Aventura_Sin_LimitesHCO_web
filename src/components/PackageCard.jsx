@@ -35,8 +35,9 @@ const PackageCard = ({ pkg }) => {
           <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">Precios Desde</p>
           <p className="text-2xl font-black text-[#f37021] mb-4">S/ {pkg.precio}</p>
           
+          {/* 🚀 MODIFICACIÓN CORRECTA: Ahora apunta a tu ruta exclusiva de paquetes */}
           <Link
-            to={`/tour/${pkg.id}`}
+            to={`/paquete/${pkg.id}`}
             className="block w-full text-center bg-[#004a8c] text-white font-bold py-3 px-4 rounded-xl hover:bg-[#003566] transition-colors duration-300 text-xs uppercase tracking-wider shadow-sm"
           >
             VER PAQUETE COMPLETO 
