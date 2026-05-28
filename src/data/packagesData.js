@@ -104,5 +104,55 @@ export const PACKAGES_DATA = [
         detalle: "Visita matutina a la poza medicinal de aguas sulfurosas bajo el cerro de la Bella Durmiente. Almuerzo de despedida probando el clásico Tacacho con Cecina y Juane amazónico. Retorno por la tarde hacia la ciudad de Huánuco."
       }
     ]
+  },
+  {
+    id: "p3",
+    nombre: "Sierra Mágica Extrema",
+    duracion: "6 Días / 5 Noches",
+    precio: "780.00",
+    descuento: "¡10% DTO!",
+    imagen: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop",
+    grupoMax: "Max 10 Personas",
+    idiomas: "Español",
+    dificultad: "Alta / Trekking",
+    descripcion: "Una travesía monumental de alta montaña para aventureros de verdad. Contempla la sobrecogedora belleza de la Laguna de Carpa, camina entre los gigantes pétreos de nuestros bosques de rocas y convive con comunidades nativas altoandinas que preservan tradiciones ancestrales.",
+    galeria: [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=500&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=500&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1434064511983-18c6dae20ed5?q=80&w=500&auto=format&fit=crop"
+    ],
+    alojamientos: [
+      "Refugio Alta Montaña Carpa (Eco)",
+      "Hotel El Parque Ambo (3★)",
+      "Campamento Base Premium (Aventura)"
+    ],
+    incluye: [
+      "Movilidad privada 4x4 para zonas de difícil acceso",
+      "5 noches de alojamiento (Hotel y domos de montaña)",
+      "Guías certificados en alta montaña y trekking",
+      "Todas las comidas de montaña e hidratación diaria",
+      "Arrieros y caballos de apoyo para equipaje técnico"
+    ],
+    noIncluye: [
+      "Equipo de trekking personal (Mochila, botas de montaña)",
+      "Propinas para el staff de apoyo local"
+    ],
+    itinerario: [
+      {
+        dia: "Día 1",
+        titulo: "Viaje de Altura y Campamento Carpa",
+        detalle: "Salida rumbo a las zonas más altas de la provincia. Llegada y aclimatación guiada en los alrededores de la Laguna de Carpa. Armado de domos y fogata de integración bajo el cielo estrellado andino."
+      },
+      {
+        dia: "Día 2",
+        titulo: "Trekking al Bosque de Rocas Milenario",
+        detalle: "Ascenso a pie hacia el majestuoso Bosque de Rocas. Exploración de pasadizos laberínticos naturales formados por la erosión del viento a lo largo de millones de años. Box-lunch incluido en ruta."
+      },
+      {
+        dia: "Día 3",
+        titulo: "Convivencia en Comunidades Nativas",
+        detalle: "Descenso hacia los valles interandinos para compartir un día completo con una comunidad local. Aprenderemos sobre sus técnicas textiles, agricultura nativa y disfrutaremos de una Pachamanca tradicional hecha en nuestra herencia."
+      }
+    ]
   }
 ];
