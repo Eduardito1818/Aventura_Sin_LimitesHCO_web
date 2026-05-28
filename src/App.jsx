@@ -6,6 +6,7 @@ import TourDetail from './pages/TourDetail';
 import PackageDetail from './pages/PackageDetail';
 import Nosotros from './pages/Nosotros';
 import Resenas from './pages/Resenas';
+import Hoteles from './pages/Hotels';
 import Preloader from './components/Preloader';
 import WelcomePreloader from './components/WelcomePreloader';
 
@@ -35,6 +36,7 @@ function App() {
             {/* Nuevas páginas independientes */}
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/resenas" element={<Resenas />} />
+            <Route path="/hoteles" element={<Hoteles />} />
           </Routes>
           
           {/* Botón flotante de WhatsApp */}
