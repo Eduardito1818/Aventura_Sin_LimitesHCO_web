@@ -51,24 +51,103 @@ export default function PackageDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-poppins pb-16">
+    <div className="min-h-screen bg-slate-50 font-poppins pb-24">
       
-      {/* 📍 CABECERA TEMPORAL DE CONTROL - Confirma que los datos fluyen */}
-      <div className="pt-32 px-6 max-w-4xl mx-auto text-center">
-        <span className="bg-[#f37021]/10 text-[#f37021] text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider border border-[#f37021]/20">
-          Lienzo Conectado Exitosamente (ID: {id})
-        </span>
-        <h1 className="text-3xl md:text-4xl font-black text-[#004a8c] uppercase mt-4 tracking-tight">
-          {pkg.nombre}
-        </h1>
-        <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-          {pkg.descripcion}
-        </p>
+      {/* 🏞️ HERO INMERSIVO (Ocupa el 65% de la pantalla y sube detrás del Navbar) */}
+      <div className="relative h-[65vh] w-full overflow-hidden bg-slate-900">
+        {/* Imagen de fondo dinámica */}
+        <img 
+          src={activeImage} 
+          alt={pkg.nombre} 
+          className="w-full h-full object-cover animate-fade-in duration-700"
+        />
+        
+        {/* Capa de degradado oscuro premium para dar contraste al texto y Navbar */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-black/40 to-black/70" />
+
+        {/* Contenido Central del Hero */}
+        <div className="absolute inset-0 flex flex-col justify-end pb-20 px-6 max-w-7xl mx-auto w-full z-10">
+          {/* Migas de Pan / Breadcrumbs */}
+          <p className="text-xs font-bold text-white/80 uppercase tracking-widest mb-2">
+            Inicio › Paquetes Exclusivos › {pkg.duracion}
+          </p>
+          
+          {/* Título Monumental */}
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight max-w-4xl leading-none drop-shadow-md">
+            {pkg.nombre}
+          </h1>
+
+          {/* Sistema de Calificación y Reviews */}
+          <div className="flex items-center gap-2 mt-4">
+            <div className="flex text-[#f37021] text-lg">★★★★★</div>
+            <span className="text-white font-black text-sm bg-[#f37021] px-2.5 py-0.5 rounded-md text-xs tracking-wider">
+              4.9
+            </span>
+            <span className="text-white/90 text-xs font-bold uppercase tracking-wider">
+              (120 Reseñas Reales)
+            </span>
+          </div>
+        </div>
       </div>
 
-      {/* 🚀 EN EL SIGUIENTE PASO PEGAREMOS AQUÍ EL HERO Y LA COLUMNA DE RESERVAS */}
-      
+      {/* 📊 CUERPO PRINCIPAL CON LA BARRA FLOTANTE */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-20 -mt-10">
+        
+        {/* 🎛️ BARRA DE ATRIBUTOS FLOTANTE BLANCA */}
+        <div className="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 items-center mb-12">
+          
+          {/* Atributo 1: Duración */}
+          <div className="flex items-center gap-4 px-4 border-r border-transparent md:border-slate-100">
+            <div className="p-3 bg-slate-50 rounded-2xl text-[#004a8c]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Duración</p>
+              <p className="text-sm font-black text-[#004a8c] uppercase mt-1 tracking-tight">{pkg.duracion}</p>
+            </div>
+          </div>
 
+          {/* Atributo 2: Capacidad de Grupo */}
+          <div className="flex items-center gap-4 px-4 md:border-r md:border-slate-100">
+            <div className="p-3 bg-slate-50 rounded-2xl text-[#004a8c]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Grupo</p>
+              <p className="text-sm font-black text-[#004a8c] uppercase mt-1 tracking-tight">{pkg.grupoMax}</p>
+            </div>
+          </div>
+
+          {/* Atributo 3: Idiomas */}
+          <div className="flex items-center gap-4 px-4 border-r border-transparent md:border-slate-100">
+            <div className="p-3 bg-slate-50 rounded-2xl text-[#004a8c]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m5 8 6 6 6-6"/><path d="m4 14 6-6 8 8"/></svg>
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Idiomas</p>
+              <p className="text-sm font-black text-[#004a8c] uppercase mt-1 tracking-tight">{pkg.idiomas}</p>
+            </div>
+          </div>
+
+          {/* Atributo 4: Dificultad del Circuito */}
+          <div className="flex items-center gap-4 px-4">
+            <div className="p-3 bg-slate-50 rounded-2xl text-[#004a8c]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Dificultad</p>
+              <p className="text-sm font-black text-[#004a8c] uppercase mt-1 tracking-tight">{pkg.dificultad}</p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* 🚧 EN EL SIGUIENTE BLOQUE INSTALAREMOS EL GRID ASIMÉTRICO (COLUMNA IZQUIERDA Y TARJETA FLOTANTE) */}
+        <div className="text-center py-8 text-slate-400 text-xs font-bold uppercase tracking-wider bg-white rounded-3xl border border-dashed border-slate-200">
+          Estructura de Cabecera Lista. Listos para el Grid de Contenido.
+        </div>
+
+      </div>
     </div>
   );
 }

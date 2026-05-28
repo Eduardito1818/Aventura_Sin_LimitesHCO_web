@@ -83,7 +83,7 @@ export const PACKAGES_DATA = [
     duracion: "4 Días / 3 Noches",
     rating: 4.7,
     reviews: 95,
-    imagen: "/src/assets/selva-aventura.jpg.png",
+    imagen: "/src/assets/tingo-maria.jpg.png",
     puntos: ["Catarata de la Leona", "Cueva de las Lechuzas", "Paseo en bote", "Full Day", "Hotel"]
   },
   {
@@ -93,7 +93,7 @@ export const PACKAGES_DATA = [
     duracion: "6 Días / 5 Noches",
     rating: 4.8,
     reviews: 150,
-    imagen: "/src/assets/sierra-magica.jpg.png",
+    imagen: "/src/assets/huanuco-tradicional.jpg.png",
     puntos: ["Laguna de Carpa", "Bosque de Rocas", "Comunidades Nativas", "Trekking", "+ All Meals", "Hotel"]
   }
 ];
