@@ -89,13 +89,11 @@ export default function PackageDetail() {
           </div>
         </div>
       </div>
-
-      {/* 📊 CUERPO PRINCIPAL CON LA BARRA FLOTANTE */}
+{/* 📊 CUERPO PRINCIPAL CON LA BARRA FLOTANTE Y EL GRID ASIMÉTRICO */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-20 -mt-10">
         
         {/* 🎛️ BARRA DE ATRIBUTOS FLOTANTE BLANCA */}
         <div className="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 items-center mb-12">
-          
           {/* Atributo 1: Duración */}
           <div className="flex items-center gap-4 px-4 border-r border-transparent md:border-slate-100">
             <div className="p-3 bg-slate-50 rounded-2xl text-[#004a8c]">
@@ -139,12 +137,215 @@ export default function PackageDetail() {
               <p className="text-sm font-black text-[#004a8c] uppercase mt-1 tracking-tight">{pkg.dificultad}</p>
             </div>
           </div>
-
         </div>
 
-        {/* 🚧 EN EL SIGUIENTE BLOQUE INSTALAREMOS EL GRID ASIMÉTRICO (COLUMNA IZQUIERDA Y TARJETA FLOTANTE) */}
-        <div className="text-center py-8 text-slate-400 text-xs font-bold uppercase tracking-wider bg-white rounded-3xl border border-dashed border-slate-200">
-          Estructura de Cabecera Lista. Listos para el Grid de Contenido.
+        {/* 🗺️ GRID ASIMÉTRICO: CONTENIDO VS TARJETA DE RESERVA */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          
+          {/* COLUMNA IZQUIERDA: INFORMACIÓN Y DETALLES (2/3 de ancho) */}
+          <div className="lg:col-span-2 space-y-8">
+            
+            {/* Descripción General */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+              <h2 className="text-xl font-black text-[#004a8c] uppercase tracking-tight mb-4 border-b border-slate-100 pb-3">
+                Descripción General
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                {pkg.descripcion}
+              </p>
+            </div>
+
+            {/* Galería Fotográfica Interactiva */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+              <h2 className="text-xl font-black text-[#004a8c] uppercase tracking-tight mb-4">
+                Galería de la Ruta
+              </h2>
+              <div className="grid grid-cols-3 gap-3">
+                {pkg.galeria.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImage(img)}
+                    className={`h-24 md:h-32 rounded-2xl overflow-hidden border-2 transition-all ${
+                      activeImage === img ? 'border-[#f37021] scale-95 shadow-md' : 'border-transparent hover:scale-102'
+                    }`}
+                  >
+                    <img src={img} alt={`Miniatura ${idx + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Itinerario Detallado (Acordeón Interactivo) */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+              <h2 className="text-xl font-black text-[#004a8c] uppercase tracking-tight mb-6">
+                Itinerario Detallado
+              </h2>
+              <div className="space-y-4">
+                {pkg.itinerario.map((item, idx) => {
+                  const isOpened = openDay === idx;
+                  return (
+                    <div key={idx} className="border border-slate-100 rounded-2xl overflow-hidden shadow-2xs">
+                      <button
+                        onClick={() => setOpenDay(isOpened ? -1 : idx)}
+                        className={`w-full flex items-center justify-between p-5 text-left transition-colors ${
+                          isOpened ? 'bg-[#004a8c]/5 text-[#004a8c]' : 'bg-white text-slate-800 hover:bg-slate-50'
+                        }`}
+                      >
+                        <span className="text-sm font-black uppercase tracking-tight flex items-center gap-3">
+                          <span className="text-[#f37021]">{item.dia}:</span> {item.titulo}
+                        </span>
+                        <span className="text-xl font-black text-[#f37021]">
+                          {isOpened ? '−' : '+'}
+                        </span>
+                      </button>
+                      
+                      {isOpened && (
+                        <div className="p-5 bg-white border-t border-slate-50 text-slate-600 text-xs md:text-sm leading-relaxed font-medium animate-fade-in">
+                          {item.detalle}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Bloque: ¿Qué incluye y Qué no? */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Incluye */}
+              <div className="bg-emerald-50/40 rounded-3xl p-6 border border-emerald-100/50">
+                <h3 className="text-sm font-black text-emerald-800 uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <span className="text-lg">✓</span> Lo Que Incluye
+                </h3>
+                <ul className="space-y-3">
+                  {pkg.incluye.map((inc, i) => (
+                    <li key={i} className="text-xs md:text-sm text-slate-700 font-bold flex items-start gap-2.5">
+                      <span className="text-emerald-500 font-black mt-0.5">✓</span> {inc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* No Incluye */}
+              <div className="bg-rose-50/40 rounded-3xl p-6 border border-rose-100/50">
+                <h3 className="text-sm font-black text-rose-800 uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <span className="text-lg">✕</span> No Incluye
+                </h3>
+                <ul className="space-y-3">
+                  {pkg.noIncluye.map((noInc, i) => (
+                    <li key={i} className="text-xs md:text-sm text-slate-700 font-bold flex items-start gap-2.5">
+                      <span className="text-rose-400 font-black mt-0.5">✕</span> {noInc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          {/* COLUMNA DERECHA: CAJA FIJA DE RESERVA (1/3 de ancho) */}
+          <div className="lg:sticky lg:top-28 space-y-6">
+            <div className="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 relative overflow-hidden">
+              
+              {/* Badge Flotante de Descuento */}
+              <span className="absolute top-4 right-4 bg-[#f37021] text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+                {pkg.descuento}
+              </span>
+
+              <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest leading-none">Precio por Persona</p>
+              <div className="flex items-baseline gap-2 mt-2">
+                <span className="text-3xl font-black text-[#f37021]">S/ {pkg.precio}</span>
+                <span className="text-slate-400 text-xs line-through font-bold">S/ {pkg.id === 'p1' ? '450.00' : pkg.id === 'p2' ? '650.00' : '860.00'}</span>
+              </div>
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wide mt-1">Impuestos de ingreso incluidos</p>
+
+              <hr className="my-5 border-slate-100" />
+
+              {/* Formulario de Simulación */}
+              <div className="space-y-4">
+                
+                {/* Selector de Alojamiento */}
+                <div>
+                  <label className="text-[10px] font-black text-[#004a8c] uppercase tracking-widest block mb-2">Opción de Alojamiento</label>
+                  <select 
+                    value={selectedHotel}
+                    onChange={(e) => setSelectedHotel(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-bold text-slate-700 focus:outline-hidden focus:border-[#004a8c]"
+                  >
+                    {pkg.alojamientos.map((hotel, hIdx) => (
+                      <option key={hIdx} value={hotel}>{hotel}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Selector de Fecha */}
+                <div>
+                  <label className="text-[10px] font-black text-[#004a8c] uppercase tracking-widest block mb-2">Fecha de Llegada</label>
+                  <input 
+                    type="date"
+                    value={travelDate}
+                    onChange={(e) => setTravelDate(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-bold text-slate-700 focus:outline-hidden focus:border-[#004a8c]"
+                  />
+                </div>
+
+                {/* Contadores de Personas */}
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  {/* Adultos */}
+                  <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl text-center">
+                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Adultos</span>
+                    <div className="flex items-center justify-between mt-2">
+                      <button 
+                        onClick={() => setAdults(Math.max(1, adults - 1))}
+                        className="w-7 h-7 bg-white rounded-lg border border-slate-200 text-sm font-black text-slate-600 hover:bg-slate-100 transition-colors"
+                      >-</button>
+                      <span className="text-sm font-black text-slate-800">{adults}</span>
+                      <button 
+                        onClick={() => setAdults(adults + 1)}
+                        className="w-7 h-7 bg-white rounded-lg border border-slate-200 text-sm font-black text-slate-600 hover:bg-slate-100 transition-colors"
+                      >+</button>
+                    </div>
+                  </div>
+
+                  {/* Niños */}
+                  <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl text-center">
+                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Niños (2-11)</span>
+                    <div className="flex items-center justify-between mt-2">
+                      <button 
+                        onClick={() => setChildren(Math.max(0, children - 1))}
+                        className="w-7 h-7 bg-white rounded-lg border border-slate-200 text-sm font-black text-slate-600 hover:bg-slate-100 transition-colors"
+                      >-</button>
+                      <span className="text-sm font-black text-slate-800">{children}</span>
+                      <button 
+                        onClick={() => setChildren(children + 1)}
+                        className="w-7 h-7 bg-white rounded-lg border border-slate-200 text-sm font-black text-slate-600 hover:bg-slate-100 transition-colors"
+                      >+</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Botones de Acción Comercial */}
+              <div className="mt-6 space-y-3">
+                <button 
+                  onClick={handleWhatsAppRedirect}
+                  className="w-full bg-[#004a8c] text-white font-black text-xs uppercase tracking-widest py-4 rounded-xl hover:bg-[#003566] transition-colors shadow-md block text-center"
+                >
+                  Reservar Ahora
+                </button>
+                
+                <button 
+                  onClick={handleWhatsAppRedirect}
+                  className="w-full bg-[#25D366] text-white font-black text-xs uppercase tracking-widest py-4 rounded-xl hover:bg-emerald-600 transition-colors shadow-md flex items-center justify-center gap-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  Consultar por WhatsApp
+                </button>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
       </div>
