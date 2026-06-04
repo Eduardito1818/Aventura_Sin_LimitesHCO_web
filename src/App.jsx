@@ -10,6 +10,7 @@ import Hoteles from './pages/Hotels';
 import Preloader from './components/Preloader';
 import WelcomePreloader from './components/WelcomePreloader';
 import Terms from './pages/Terms';
+import Complaints from './pages/Complaints';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,6 +43,7 @@ function App() {
             
             {/* 📄 Ruta legal de términos y condiciones (CORREGIDA ADENTRO DE ROUTES) */}
             <Route path="/terminos-condiciones" element={<Terms />} />
+            <Route path="/reclamaciones" element={<Complaints />} />
           </Routes>
           
           {/* Botón flotante de WhatsApp */}
