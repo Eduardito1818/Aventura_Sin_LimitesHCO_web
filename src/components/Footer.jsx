@@ -6,19 +6,52 @@ export default function Footer() {
     <footer className="bg-[#004a8c] text-white font-poppins pt-16 pb-8 border-t border-[#003566]">
       <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
         
-        {/* 🏔️ COLUMNA 1: IDENTIDAD DE LA AGENCIA */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="bg-white text-[#004a8c] font-black px-2.5 py-1 rounded-lg text-lg shadow-xs">
-              A
-            </span>
-            <span className="text-lg font-black uppercase tracking-tight">
-              Aventura <span className="text-[#f37021]">Sin Límites</span>
-            </span>
+        {/* 🏔️ COLUMNA 1: IDENTIDAD DE LA AGENCIA Y DATOS DE CONTACTO */}
+        <div className="space-y-6">
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <span className="bg-white text-[#004a8c] font-black px-2.5 py-1 rounded-lg text-lg shadow-xs">
+                A
+              </span>
+              <span className="text-lg font-black uppercase tracking-tight">
+                Aventura <span className="text-[#f37021]">Sin Límites</span>
+              </span>
+            </div>
+            <p className="text-slate-200 text-xs md:text-sm leading-relaxed font-medium max-w-sm">
+              Expertos en turismo de aventura y rutas tradicionales en la región de Huánuco. Vive experiencias auténticas con guías certificados y los mejores hospedajes de la zona.
+            </p>
           </div>
-          <p className="text-slate-200 text-xs md:text-sm leading-relaxed font-medium max-w-sm">
-            Expertos en turismo de aventura y rutas tradicionales en la región de Huánuco. Vive experiencias auténticas con guías certificados y los mejores hospedajes de la zona.
-          </p>
+
+          {/* 📍 COMPONENTE DE DIRECCIÓN, TELÉFONO Y CORREO (Inspirado en image_322917.png) */}
+          <div className="space-y-3.5 pt-2 border-t border-white/10 text-slate-200 text-xs md:text-sm font-semibold">
+            
+            {/* Dirección Física */}
+            <div className="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f37021" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Jr. General Prado N° 740, Huánuco, Perú</span>
+            </div>
+
+            {/* Teléfono de Central de Reservas */}
+            <div className="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f37021" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>+51 962 840 311</span>
+            </div>
+
+            {/* Correo Electrónico Institucional */}
+            <div className="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f37021" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <span className="lowercase">reservas@aventurasinlimites.com</span>
+            </div>
+
+          </div>
         </div>
 
         {/* 🗺️ COLUMNA 2: NAVEGACIÓN Y ENLACES COMERCIALES */}
