@@ -11,6 +11,9 @@ export default function Complaints() {
     telefono: '',
     correo: '',
     tipo: 'Reclamo', // Reclamo o Queja
+    fechaIncidente: '', // 📅 Agregado según image_329616.png
+    bienContratado: 'Servicio', // 📦 Requisito formal INDECOPI
+    montoReclamado: '', // 💰 Campo opcional de respaldo
     detalle: '',
     pedido: ''
   });
@@ -103,7 +106,50 @@ export default function Complaints() {
             <div className="space-y-4 pt-4 border-t border-slate-100">
               <span className="text-[10px] font-black text-[#f37021] uppercase tracking-widest block border-l-2 border-[#f37021] pl-2">2. Detalle de la Reclamación</span>
               
-              <div className="space-y-1">
+              {/* 📊 FILA DE ENTRADAS FORMALES (Grid de 3 columnas en desktop, 1 en mobile) */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                
+                {/* Selector: Bien Contratado */}
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider block">Bien Contratado</label>
+                  <select 
+                    value={formData.bienContratado} 
+                    onChange={(e) => setFormData({...formData, bienContratado: e.target.value})} 
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 font-semibold focus:outline-none focus:border-[#004a8c]"
+                  >
+                    <option value="Servicio">Servicio (Tour / Hospedaje)</option>
+                    <option value="Producto">Producto (Bienes materiales)</option>
+                  </select>
+                </div>
+
+                {/* Input: Fecha del Incidente (image_329616.png) */}
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider block">Fecha del Incidente</label>
+                  <input 
+                    required 
+                    type="date" 
+                    value={formData.fechaIncidente} 
+                    onChange={(e) => setFormData({...formData, fechaIncidente: e.target.value})} 
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 font-semibold focus:outline-none focus:border-[#004a8c]" 
+                  />
+                </div>
+
+                {/* Input: Monto Reclamado */}
+                <div className="space-y-1">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider block">Monto Reclamado (S/. Opcional)</label>
+                  <input 
+                    type="number" 
+                    placeholder="0.00"
+                    value={formData.montoReclamado} 
+                    onChange={(e) => setFormData({...formData, montoReclamado: e.target.value})} 
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 font-semibold focus:outline-none focus:border-[#004a8c]" 
+                  />
+                </div>
+
+              </div>
+              
+              {/* Selector de Tipo de Incidencia (Radios) */}
+              <div className="space-y-1 pt-2">
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-wider block">Tipo de Incidencia</label>
                 <div className="flex gap-4">
                   <label className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 cursor-pointer">
